@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Stations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card" *ngFor="let st of stations" (click)="getStationDetails(st.abbr)">
+      <ion-card-header>
+        <ion-card-title>Station {{st.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{st.address}}, {{st.city}}, {{st.state}}, {{st.zipcode}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

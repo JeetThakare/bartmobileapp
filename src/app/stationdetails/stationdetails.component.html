@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Station Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-img src="../assets/bart.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Station {{station.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{station.address}}, {{station.city}}, {{station.state}}, {{station.zipcode}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "bartmobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "e7811be4"
+}

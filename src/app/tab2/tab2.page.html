@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Stations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<br>
+  <br>
+<ion-item>
+    <ion-label>Source</ion-label>
+    <ion-select placeholder="Select Source" [(ngModel)]="source" (ionChange)="sourceChanged()">
+      <ion-select-option  *ngFor="let st of stations" value="{{st.abbr}}">{{st.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <br>
+  <br>
+  <ion-item>
+    <ion-label>Destination</ion-label>
+    <ion-select placeholder="Select Destination" [(ngModel)]="destination" (ionChange)="destChanged()">
+      <ion-select-option  *ngFor="let st of stations" value="{{st.abbr}}">{{st.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <br>
+  <br>
+
+  
+  <ion-card class="welcome-card" *ngFor="let trip of trips">
+       <ion-card-header>
+        <ion-card-title>Station Details</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{trip['@origin']}}</p>
+        <p>{{trip['@destination']}}</p>
+        <p>${{trip['@fare']}}</p>
+        <p>{{trip['@tripTime']}} mins</p>
+      </ion-card-content>
+  </ion-card>
+
+  <agm-map [latitude]="37.7749" [longitude]="-122.4194">
+    <agm-direction [origin]="sourceDir" [destination]="destDir" [travelMode]="travelMode">
+    </agm-direction>
+  </agm-map>
+</ion-content>
